@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Correct Guess</title>
+  </head>
+  <body>
+    <h1>Congratulations! You've guessed the correct number.</h1>
+    <p>Name: {{ name }}</p>
+    <p>Difficulty: {{ difficulty }}</p>
+    <p>Remaining Bet Points: {{ bet_points }}</p>
+    <p>Current Bet: {{ current_bet }}</p>
+    {% if not next_round %} {% if error_message %}
+    <p style="color: red">{{ error_message }}</p>
+    {% endif %}
+    <form method="post">
+      <label for="double_prize"
+        >Do you want to double your prize? If you try, you have a 50% chance to
+        double your prize and get {{ current_bet * 2 }} points, or lose the
+        points you win.</label
+      ><br />
+      <input type="radio" id="yes" name="double_prize" value="yes" />
+      <label for="yes">Yes</label><br />
+      <input type="radio" id="no" name="double_prize" value="no" />
+      <label for="no">No</label><br />
+      <button type="submit">Submit</button>
+    </form>
+    {% else %}
+    <p>{{ message }}</p>
+    <a href="{{ url_for('place_bet') }}">Start New Round</a>
+    <a href="{{ url_for('end_game') }}">Finish and Save Score</a>
+    {% endif %}
+  </body>
+</html>

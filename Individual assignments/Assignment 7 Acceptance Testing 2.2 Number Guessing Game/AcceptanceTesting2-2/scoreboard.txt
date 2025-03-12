@@ -1,0 +1,10 @@
+alex:1800:hard
+maria:600:easy
+john:500:easy
+li wei:450:easy
+sara:400:hard
+nina:300:hard
+james:150:easy
+emma:120:easy
+lucas:110:easy
+oliver:100:easy

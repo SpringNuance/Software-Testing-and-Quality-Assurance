@@ -1,0 +1,30 @@
+TOUR
+----
+<tour name>
+<summary>
+
+INTENT
+------
+<description of intent>
+
+START
+-----
+yyyy-mm-dd hh:mm
+
+TESTER
+------
+<name>
+
+TASK BREAKDOWN
+--------------
+#TEST EXECUTION
+mm
+
+TEST NOTES
+----------
+
+FAULTS
+------
+
+ISSUES
+------

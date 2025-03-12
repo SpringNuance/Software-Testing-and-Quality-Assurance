@@ -1,0 +1,80 @@
+Title: Unit Testing 1 (Number Guessing Game)
+Name:
+Student Number:
+
+In this assignment, you will write unit tests for a number guessing game application. The game involves choosing a difficulty level, placing bets, and guessing numbers. The top ten high scores are saved to a scoreboard.
+
+You will start by answering conceptual questions related to equivalence partitioning, boundary value analysis, robustness testing, and decision table testing. Then, you will implement unit tests for the application using these concepts. Finally, you will write comprehensive tests for all functions in game.py.
+
+Conceptual Questions
+
+1. Equivalence Partitioning:
+Explain how equivalence partitioning can be applied to the number guessing functionality. Identify at least three equivalence classes for valid and invalid guesses.
+
+Answer:
+Write your answers here.
+
+2. Boundary Value Analysis (BVA):
+Discuss how boundary value analysis can be used to test the bet placing functionality. Identify the boundary values you would test.
+
+Answer:
+Write your answers here.
+
+3. Robustness Testing:
+Describe how robustness testing can be applied to the difficulty selection functionality. What are the expected valid and invalid inputs?
+
+Answer:
+Write your answers here.
+
+4. Decision Table Testing:
+Create a decision table to cover the scenarios where the user decides to double their winnings after a correct guess or try to save their bet after having out of guesses. Include all possible outcomes. One example is given for you. Use as many rows as required.
+
+Answer:
+Fill the below table.
+
+| State         | Decision   | random.choice | Outcome                                     |
+|---------------|------------|---------------|---------------------------------------------|
+| double_prize  | No         | N/A           | bet_points = bet_points + current_bet       |
+|               |            |               |                                             |
+|               |            |               |                                             |
+|               |            |               |                                             |
+|               |            |               |                                             |
+|               |            |               |                                             |
+|               |            |               |                                             |
+|               |            |               |                                             |
+|               |            |               |                                             |
+|               |            |               |                                             |
+
+
+
+
+
+Implementation of Unit Tests
+You will implement unit tests in these separate files:
+- test_theoretical_concepts.py: Tests for equivalence partitioning, boundary value analysis, robustness testing, and decision table testing.
+- test_game.py: Tests for all functions in game.py.
+
+File Structures of the Assignment:
+NUMBER-GUESSING-GAME
+- templates
+  - bet.html
+  - correct.html
+  - difficulty.html
+  - end.html
+  - guess.html
+  - index.html
+  - out_of_guesses.html
+- tests
+  - test_game.py
+  - test_theoretical_concepts.py
+- app.py
+- game.py
+- routes.py
+- scoreboard.py
+
+How to Install Dependencies
+1. Ensure you have Python installed on your system.
+2. Open a terminal and navigate to the project directory.
+3. Run the following command to install the required dependencies:
+```bash
+pip install -r requirements.txt

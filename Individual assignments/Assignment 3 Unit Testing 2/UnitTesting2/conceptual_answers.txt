@@ -1,0 +1,73 @@
+Title: Unit Testing 2 (Number Guessing Game)
+Name:
+Student Number:
+
+
+Conceptual Questions
+
+1. How many statements are there in the load_scores() function?
+
+Answer:
+Write your answers here.
+
+2. Why might achieving 100% statement coverage for load_scores() not guarantee finding all bugs?
+
+Answer:
+Write your answers here.
+
+3. Given the `add_score()` function, explain the role of each condition:
+- A: `is_valid_score` (checks if the score is valid)
+- B: `is_valid_name` (checks if the name is valid)
+- C: `is_valid_difficulty` (checks if the difficulty is valid)
+
+Complete the truth table below for the conditions `A` (is_valid_score), `B` (is_valid_name), and `C` (is_valid_difficulty). For each combination, indicate whether the score is added or if an error is raised.
+
+| Test Case | A (is_valid_score) | B (is_valid_name) | C (is_valid_difficulty) | Result (Add Score or Raise Error) |
+|-----------|--------------------|-------------------|-------------------------|-----------------------------------|
+| 1         |                    |                   |                         |                                   |
+| 2         |                    |                   |                         |                                   |
+| 3         |                    |                   |                         |                                   |
+| 4         |                    |                   |                         |                                   |
+| 5         |                    |                   |                         |                                   |
+| 6         |                    |                   |                         |                                   |
+| 7         |                    |                   |                         |                                   |
+| 8         |                    |                   |                         |                                   |
+
+---
+
+4. From the truth table above, pick the minimal set of test cases needed to achieve MC/DC. For each test case you choose, explain in one sentence why it is necessary. 
+
+
+Answer:
+
+Test Case X
+(Why it is necessary)
+This test case is necessary because...
+Parameters for this test case: 
+name: __
+score: __
+difficulty: __
+
+(Continue for remaining necessary test cases)
+
+---
+
+5. (a) Using the add_score() function, explain the difference between achieving 100% statement coverage and achieving MC/DC for the same function. Why might MC/DC be more thorough than statement coverage in this case? 
+
+(b) Why is MC/DC better in this case compared to condition coverage or decision coverage?
+
+Answer:
+(a) Write your answers here.
+
+(b) Write your answers here.
+
+
+6. Once your tests are implemented and coverage is calculated, answer the following:
+- How much statement coverage did you achieve in your tests across all functions?
+- What challenges did you face in achieving coverage, if any?
+- How did constructing a truth table help you understand MC/DC better? Would you approach testing compound conditions differently in the future?
+
+Answer:
+Write your answers here.
+---
+

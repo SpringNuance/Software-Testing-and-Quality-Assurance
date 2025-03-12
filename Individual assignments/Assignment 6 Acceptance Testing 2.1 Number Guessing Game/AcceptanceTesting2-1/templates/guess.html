@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Make a Guess</title>
+  </head>
+  <body>
+    <h1>Guess the Number</h1>
+    <p>Name: {{ name }}</p>
+    <p>Difficulty: {{ difficulty }}</p>
+    <p>Remaining Bet Points: {{ bet_points }}</p>
+    <p>Current Bet: {{ current_bet }}</p>
+    {% if hint %}
+    <p>Try a {{ hint }} number!</p>
+    {% endif %} {% if error_message %}
+    <p style="color: red">{{ error_message }}</p>
+    {% endif %}
+    <p>You have {{ guesses_left }} guesses left.</p>
+    <form method="post">
+      <label for="guess">Enter your guess (1-100):</label>
+      <input type="number" id="guess" name="guess" />
+      <button type="submit">Submit Guess</button>
+    </form>
+  </body>
+</html>

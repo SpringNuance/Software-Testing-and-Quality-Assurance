@@ -1,0 +1,35 @@
+CHARTER
+-------
+Analyse the Oscar storefront's shopping basket functionality and report on correctness and consistency issues as well as other observations about risks.
+
+#AREAS
+Browser | Chrome OR Firefox OR Safari OR Edge OR Internet Explorer
+Storefront | Basket view (/basket/)
+Strategy | Function Testing
+Strategy | Functional Analysis
+
+START
+-----
+yyyy-mm-dd hh:mm
+
+TESTER
+------
+<name>
+
+TASK BREAKDOWN
+--------------
+#DURATION
+mm
+
+DATA FILES
+----------
+#N/A
+
+TEST NOTES
+----------
+
+FAULTS
+------
+
+ISSUES
+------

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Choose Difficulty</title>
+  </head>
+  <body>
+    <h1>Choose Difficulty</h1>
+    <p>Name: {{ name }}</p>
+    <p>Remaining Bet Points: {{ bet_points }}</p>
+    {% if error_message %}
+    <p style="color: red">{{ error_message }}</p>
+    {% endif %}
+    <form method="post">
+      <input type="radio" id="easy" name="difficulty" value="easy" />
+      <label for="easy">Easy</label><br />
+      <input type="radio" id="hard" name="difficulty" value="hard" />
+      <label for="hard">Hard</label><br />
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>

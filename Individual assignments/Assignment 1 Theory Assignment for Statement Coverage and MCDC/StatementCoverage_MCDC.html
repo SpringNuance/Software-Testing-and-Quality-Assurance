@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Design Assignment</title>
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 20px;
+      }
+      h2 {
+        text-align: center;
+        color: #333;
+      }
+      p,
+      h3 {
+        max-width: 800px;
+        text-align: left;
+        color: #555;
+      }
+      h3 {
+        margin-top: 40px;
+      }
+      label {
+        font-weight: bold;
+        display: block;
+        margin: 15px 0 5px;
+      }
+      table {
+        width: 100%;
+        max-width: 800px;
+        margin: 20px 0;
+        border-collapse: collapse;
+        background: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      th,
+      td {
+        padding: 6px;
+        border: 1px solid #ddd;
+        text-align: center;
+        color: #333;
+      }
+      th {
+        background-color: #f8f8f8;
+      }
+      td input[type="number"],
+      td select {
+        width: 100px;
+        padding: 4px;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      td button {
+        margin: 8px auto;
+        background-color: #ff5c5c;
+        color: #fff;
+        border: none;
+        padding: 4px 8px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      td button:hover {
+        background-color: #ff0000;
+      }
+      button {
+        display: block;
+        margin: 20px 0;
+        padding: 10px 20px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #fileInput {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Test Design Assignment</h2>
+    <p>
+      White-box test design allows you to take structural information about the
+      SUT into consideration. You may have different targets regarding how much
+      of the SUT code you want your tests to cover. In this assignment, consider
+      how you would design test cases to achieve 100% statement coverage and
+      modified condition/decision coverage.
+    </p>
+    <p>
+      Consider the Python program in the file <strong>discount.py</strong> and
+      answer the following questions based on the definitions for coverage given
+      in the lecture slides.
+    </p>
+
+    <h3>Statement Coverage</h3>
+    <label for="q1"
+      >Q1. How many test cases (sets of inputs) are needed to achieve 100%
+      statement coverage for the function get_discount_info()? (0.5p)</label
+    >
+    <input type="number" id="q1" name="q1" min="1" />
+
+    <label for="q2">Q2. What are the inputs for each test case? (0.5p)</label>
+    <table id="q2Table">
+      <thead>
+        <tr>
+          <th>Price</th>
+          <th>Amount</th>
+          <th>Loyalty</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="number" name="price1" /></td>
+          <td><input type="number" name="amount1" /></td>
+          <td>
+            <select name="loyalty1">
+              <option value="" disabled selected>Select</option>
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </select>
+          </td>
+          <td>
+            <button type="button" onclick="removeRow(this)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" onclick="addRow('q2Table')">Add Row</button>
+
+    <h3>Modified Condition/Decision Coverage</h3>
+    <label for="q3"
+      >Q3. How many test cases (sets of inputs) are needed to achieve 100%
+      modified condition/decision coverage for the function get_discount_info()?
+      (0.5p)</label
+    >
+    <input type="number" id="q3" name="q3" min="1" />
+
+    <label for="q4">Q4. What are the inputs for each test case? (0.5p)</label>
+    <table id="q4Table">
+      <thead>
+        <tr>
+          <th>Price</th>
+          <th>Amount</th>
+          <th>Loyalty</th>
+          <th>Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><input type="number" name="price3" /></td>
+          <td><input type="number" name="amount3" /></td>
+          <td>
+            <select name="loyalty3">
+              <option value="" disabled selected>Select</option>
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </select>
+          </td>
+          <td>
+            <button type="button" onclick="removeRow(this)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <button type="button" onclick="addRow('q4Table')">Add Row</button>
+
+    <h3>Additional Instructions</h3>
+    <ul>
+      <li>
+        When answering the questions, do not make the coverage requirements
+        stricter than what is defined in the lecture slides. For example, if
+        100% path coverage would also give 100% statement coverage, but the
+        statement coverage criteria are weaker than the path coverage criteria,
+        you must answer the statement coverage questions in such a way that the
+        answer results in a weaker coverage than the path coverage criteria
+        would require.
+      </li>
+      <li>
+        When listing the inputs for the test cases, include all sets of required
+        parameters to the get_discount_info() function in the following format:
+        (x, y, z) where x, y, and z are the values of the parameters (e.g.,
+        (5.95, 10, False)).
+      </li>
+    </ul>
+    <h3>Tips</h3>
+    <ul>
+      <li>
+        You can draw up a simple graph of the if-elif-else structure to help you
+        analyze the program.
+      </li>
+      <li>
+        You can make a decision table with the outcomes of the conditional
+        expressions and the different values that the variables in those
+        expressions can take.
+      </li>
+      <li>
+        If things get messy and you lose your way, split things (i.e., the code)
+        up into smaller pieces, solve the pieces, and then see if you can get to
+        the answer by combining the pieces.
+      </li>
+      <li>
+        The python code can be run – playing around with different input values
+        could help. On the other hand, it's also possible to complete this
+        assignment just by reading the code and giving it some thought.
+      </li>
+      <li>
+        You can disregard Python details such as default parameter values and
+        details of rounding money.
+      </li>
+    </ul>
+
+    <button type="button" onclick="saveAnswers()">Save Answers as JSON</button>
+    <button type="button" onclick="importAnswers()">Import Answers</button>
+    <input
+      type="file"
+      id="fileInput"
+      accept=".json"
+      onchange="loadFile(event)"
+    />
+
+    <script>
+      let rowCountQ2 = 1;
+      let rowCountQ4 = 1;
+
+      function addRow(tableId) {
+        const table = document
+          .getElementById(tableId)
+          .getElementsByTagName("tbody")[0];
+        const newRow = document.createElement("tr");
+
+        const rowCount = tableId === "q2Table" ? ++rowCountQ2 : ++rowCountQ4;
+
+        newRow.innerHTML = `
+          <td><input type="number" name="price${rowCount}" /></td>
+          <td><input type="number" name="amount${rowCount}" /></td>
+          <td>
+            <select name="loyalty${rowCount}">
+              <option value="" disabled selected>Select</option>
+              <option value="true">True</option>
+              <option value="false">False</option>
+            </select>
+          </td>
+          <td><button type="button" onclick="removeRow(this)">Remove</button></td>
+        `;
+
+        table.appendChild(newRow);
+      }
+
+      function removeRow(button) {
+        const row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+      }
+
+      function saveAnswers() {
+        const data = {};
+
+        data.q1 = document.getElementById("q1").value;
+        data.q3 = document.getElementById("q3").value;
+
+        const tableIds = ["q2Table", "q4Table"];
+        tableIds.forEach((tableId) => {
+          const rows = document.querySelectorAll(`#${tableId} tbody tr`);
+          const answers = [];
+          rows.forEach((row) => {
+            const price = row.querySelector('input[name^="price"]').value;
+            const amount = row.querySelector('input[name^="amount"]').value;
+            const loyalty = row.querySelector('select[name^="loyalty"]').value;
+
+            if (!price || !amount || !loyalty) return;
+
+            answers.push([
+              parseFloat(price),
+              parseInt(amount),
+              loyalty === "true",
+            ]);
+          });
+          data[tableId === "q2Table" ? "q2" : "q4"] = answers;
+        });
+
+        // Convert the data object to a JSON string
+        const jsonString = JSON.stringify(data, null, 2);
+        const blob = new Blob([jsonString], { type: "application/json" });
+
+        const link = document.createElement("a");
+        link.href = URL.createObjectURL(blob);
+        link.download = "test_design_answers.json";
+
+        link.click();
+      }
+
+      function importAnswers() {
+        const fileInput = document.getElementById("fileInput");
+        fileInput.click();
+      }
+
+      function loadFile(event) {
+        const file = event.target.files[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            const jsonString = e.target.result;
+            const data = JSON.parse(jsonString);
+            populateForm(data);
+          };
+          reader.readAsText(file);
+        }
+      }
+
+      function populateForm(data) {
+        document.getElementById("q1").value = data.q1;
+        document.getElementById("q3").value = data.q3;
+
+        const tableIds = ["q2Table", "q4Table"];
+        tableIds.forEach((tableId) => {
+          const answers = data[tableId === "q2Table" ? "q2" : "q4"];
+          const tableBody = document.querySelector(`#${tableId} tbody`);
+          tableBody.innerHTML = "";
+          answers.forEach((answer, index) => {
+            const newRow = document.createElement("tr");
+            newRow.innerHTML = `
+              <td><input type="number" value="${answer[0]}" name="price${
+              index + 1
+            }" /></td>
+              <td><input type="number" value="${answer[1]}" name="amount${
+              index + 1
+            }" /></td>
+              <td>
+                <select name="loyalty${index + 1}">
+                  <option value="true" ${
+                    answer[2] ? "selected" : ""
+                  }>True</option>
+                  <option value="false" ${
+                    !answer[2] ? "selected" : ""
+                  }>False</option>
+                </select>
+              </td>
+              <td><button type="button" onclick="removeRow(this)">Remove</button></td>
+            `;
+            tableBody.appendChild(newRow);
+          });
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Number Guessing Game</title>
+  </head>
+  <body>
+    <h1>Welcome to the Number Guessing Game!</h1>
+    <h2>Game Rules</h2>
+    <ul>
+      <li>You start with 100 bet points.</li>
+      <li>
+        Choose a difficulty level:
+        <ul>
+          <li>Easy: 10 guesses</li>
+          <li>Hard: 5 guesses</li>
+        </ul>
+      </li>
+      <li>Place a bet with your bet points for each round.</li>
+      <li>
+        Guess the number between 1 and 100:
+        <ul>
+          <li>
+            If you guess correctly, you can choose to double your prize or take
+            your winnings.
+          </li>
+          <li>
+            If you choose to double, you have a 50% chance to either double your
+            prize or lose it.
+          </li>
+        </ul>
+      </li>
+      <li>
+        If you run out of guesses, you can try to save your bet:
+        <ul>
+          <li>
+            If you try to save, you have a 50% chance to keep your bet points or
+            lose the bet points you placed for that round.
+          </li>
+        </ul>
+      </li>
+      <li>
+        After each round, you can decide to continue playing or finish the game
+        and save your score to the scoreboard.
+      </li>
+      <li>
+        The game ends when you choose to finish or you have no bet points left.
+      </li>
+    </ul>
+    <p>
+      The high scores are saved and displayed on the scoreboard. Try to get your
+      name in the top 10!
+    </p>
+    {% if error_message %}
+    <p style="color: red">{{ error_message }}</p>
+    {% endif %}
+    <form method="post">
+      <label for="name">Enter your name:</label>
+      <input type="text" id="name" name="name" />
+      <button type="submit">Start</button>
+    </form>
+    <h2>Top 10 High Scores</h2>
+    <ol>
+      {% for name, score, difficulty in scores %}
+      <li>{{ name }}: {{ score }} ({{ difficulty }})</li>
+      {% endfor %}
+    </ol>
+  </body>
+</html>

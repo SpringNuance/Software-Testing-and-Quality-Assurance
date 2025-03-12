@@ -1,0 +1,92 @@
+# This is the skeleton of the CI/CD pipeline YAML file.
+# You need to configure this file to automate the testing, linting, and building of your Django Oscar project.
+
+trigger:
+  branches:
+    include:
+      -  # TODO: Specify the branch to trigger the pipeline (e.g., master)
+
+pr:
+  branches:
+    include:
+      -  # TODO: Specify the branch for pull request validation
+
+stages:
+  - stage: # TODO: Define the first stage name
+    jobs:
+      - job: # TODO: Define the job name
+        displayName: # TODO: Give a sensible name to this job
+        pool:
+          vmImage: "ubuntu-latest"
+        services:
+          # TODO: Define services needed, like a database service
+
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: # TODO: Specify the Python version to use (e.g., '3.8')
+          - script: |
+              # TODO: Add commands to install dependencies
+            displayName: "Install dependencies"
+
+          - script: |
+              # TODO: Add commands to run migrations
+            displayName: "Run migrations"
+
+          - script: |
+              # TODO: Add commands to run tests
+            displayName: "Run tests"
+
+  - stage: # TODO: Define the second stage name
+    jobs:
+      - job: lint_python
+        displayName: # TODO: Give a sensible name to this job
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: # TODO: Specify the Python version
+          - script: |
+              # TODO: Add commands to install linting tools and run linters
+            displayName: "Run Python linters"
+
+      - job: lint_js
+        displayName: # TODO: Give a friendly name to this JavaScript linting job
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - task: NodeTool@0
+            inputs:
+              versionSpec: # TODO: Specify the Node.js version for linting
+          - script: npm ci
+            displayName: "Install npm dependencies"
+          - script: |
+              # TODO: Add commands to run JavaScript linters
+            displayName: "Run JavaScript linters"
+
+  - stage: # TODO: Define the third stage name
+    jobs:
+      - job: sandbox
+        displayName: # TODO: Give a sensible name to this job
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: # TODO: Specify the Python version for building the sandbox
+          - script: |
+              # TODO: Add commands to build the sandbox environment
+            displayName: "Build sandbox"
+
+      - job: docs
+        displayName: # TODO: Give a sensible name to this job
+        pool:
+          vmImage: "ubuntu-latest"
+        steps:
+          - task: UsePythonVersion@0
+            inputs:
+              versionSpec: # TODO: Specify the Python version
+          - script: |
+              # TODO: Add commands to build project documentation
+            displayName: "Build docs"

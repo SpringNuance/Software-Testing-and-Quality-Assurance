@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Game Over</title>
+  </head>
+  <body>
+    <h1>{{ message }}</h1>
+    <h2>Top 10 High Scores</h2>
+    <ol>
+      {% for name, score, difficulty in scores %}
+      <li>{{ name }}: {{ score }} ({{ difficulty }})</li>
+      {% endfor %}
+    </ol>
+    <a href="{{ url_for('new_game') }}">Start New Game</a>
+  </body>
+</html>
